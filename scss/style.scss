@@ -1,0 +1,519 @@
+//Обнуляющий стиль
+@import "_nullstyle";
+//Шрифты для всего сайта
+@import url('https://fonts.googleapis.com/css2?family=Kurale&family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Ubuntu:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+//Миксины
+@import "_mixin";
+//Переменные
+@import "_variables";
+
+
+//Основной код
+.main{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   font-family: 'Ubuntu', sans-serif;
+   font-family: 'Titillium Web', sans-serif;
+   overflow: hidden;
+}
+//Для текста
+.about,.about_h {
+   // color: $color-text;
+   font-size: $text-size-middle;
+   line-height: 1.4;
+   font-weight: 600;
+   opacity: 0.9;
+   letter-spacing: 0.02em;
+}
+.about{
+   font-size: $text-size-standart;
+   font-weight: 300;
+}
+.about_h{
+   margin: 0 0  4.6em;
+   
+}
+//Контейнер для всех секций
+.wrapper{
+   max-width: 1070px;
+   margin: 0 auto;
+   text-align: center;
+   padding : 7.5em 0.9em 7.8em ;
+
+   @media (max-width:960px){ 
+      padding: 4em 0.9em 4.3em ;
+   }
+    @media (max-width:760px) {
+      padding : 2.5em 0.9em 2.8em ;
+      .about_h{
+         margin: 0 0  1.5em;
+      }
+   }
+   @media (max-width:524px){ 
+      padding: 2em 0.9em 2.3em ;
+   }
+  
+   
+}
+//секция hi
+.hi{
+   color: $color-text-light;
+   a{
+      color: inherit;
+   }
+   background-color: #87509c;
+   .wrapper{
+      padding: 3.75em 0.9em 0;
+      @media (max-width:586px){
+         padding: 0;
+      }
+   }
+   .header{
+      margin: 0 0 8.75em 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include navbar;
+      @media (max-width:960px){ 
+         margin: 0 0 4em 0;
+      }
+      @media (max-width:586px) {
+         background-color: #631881;
+         display: block;
+         padding: 50px 0;
+      }
+      .navbar{
+         @media (max-width:586px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            a{
+               font-size: 14px;
+               padding: 0.5em 1.5em;
+            }
+            @media (max-width:420px){
+               a{
+                  font-size: 14px;
+                  padding: 0.5em 0.4em;
+               }
+            }
+
+         }
+      }
+   }
+   //миксин для заголовка
+   @include h1;
+   //миксин для кнопок
+   @include button;
+   .logo{
+      @media (max-width:586px) {
+         display: none;
+      }
+   }
+
+}
+//Флекс контейнер и элементы для секций services,team
+.flex {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 20px;
+   @media (max-width:960px){
+      
+      .column{
+         flex: 1 0 48%;
+      }
+   }
+}
+.column{
+   display: flex;
+   flex: 0 0 20%;
+   flex-wrap: wrap;
+   flex-direction: column;
+   align-items: center;
+   img{
+      margin: 0 0 3.9em;
+      @media (max-width:524px){ 
+         max-width: 70%;
+         margin: 0 0 2em;
+      }
+   }
+   @include h3;
+   h3{
+      margin: 0 0 1.12em;
+   }
+}
+//секция services
+.services {
+   color: $color-text-light;
+   background-color: #17c2a4;
+   @include h2;
+  .about_h{
+   span{
+      display: block;
+      @media (max-width:640px) {
+         display: inline;
+         padding: 0;
+   }
+   }
+  
+  }
+   }
+//секция team
+.rank{
+   font-size: 1rem;
+   line-height: 0.8;
+   font-weight: 400;
+   letter-spacing: 0.02em;
+   color: #30bae7;
+   margin: 0 0 1.9em;
+}
+.team {
+   color: $color-text-dark;
+   background-color: #e7f1f8;
+   @include h2;
+   @include h3;
+   h3{
+      margin: 0 0 0.63em;
+   }
+   
+   
+   .about{
+      margin: 0 0 1.9em;
+   }
+   .team_column_2{
+      .facebook{
+         display: none;
+      }
+   }
+   .team_column_4{
+      .in{
+         display: none;
+      }
+   }
+  .social{
+   display: flex;
+   gap: 0.75em;
+   img{
+      margin: 0;
+   }
+  }
+}
+//секция skills
+.skills {
+   @include h2;
+   @include h3;
+  color: $color-text-dark;
+  img{
+   margin: 0;
+  }
+  .skills_flex{
+   @include diagramm;
+   .diagramm{
+      margin: 0 0 30px;
+      span{
+         font-size: 20px;  
+      }
+   }
+
+
+   .item_1 {
+      --percentage:90;
+      --color:#35bce7;
+   }
+   .item_2 {
+      
+      --percentage:75;
+      --color:#d74680;
+   }
+   .item_3 {
+      --percentage:75;
+      --color:#15c7a8;
+   }
+
+   .item_4 {
+      --percentage:55;
+      --color:#eb7d4b;
+   }
+
+}
+.total{
+   margin: 0 0 0 0.2em;
+}
+@media (max-width:764px) {
+   .block{
+      flex: 1 0 48%;
+   }
+}
+@media (max-width:524px) {
+   .block{
+      flex: 0 0 40%;
+   }
+}
+}
+//cекция portfolio
+.portfolio{
+   background-color: #ffdd99;
+   color: $color-text-dark;
+   @include h2;
+   @include h3;
+   @include button;
+   @include navbar;
+  
+   .flex{
+      gap: 0;
+   }
+   .column{
+      flex: 0 1 49%;
+      .container_photo{
+         min-height: 250px;
+      }
+      align-self: baseline;
+   }
+   .about_h{
+      margin: 0 0 2.34em;
+   }
+   
+   img{
+      margin: 0 0 2em;
+      width: 100%;
+      object-fit: contain;
+   }
+   h3{
+      opacity: 0.9;
+      margin: 0 0 2.75em;
+   }
+   .button{
+      color: $color-text-light;
+      background-color: #17c2a4;
+      border-color: #14a58c;
+      margin: 0;
+   }
+   .navbar{
+      a{
+         font-size: 1.125rem;
+         color:$color-text-dark;
+         background-color: white;
+      }
+      a:hover{
+         color: white;
+      }
+      margin: 0 0 3.4em;
+      gap: 10px;
+      justify-content: center;
+      @media (max-width: 450px) {
+         display: none;
+      }
+   }
+   // @media (max-width:1025px) {
+   //    .flex{
+   //       .column{
+   //          flex: 1 1 auto;
+   //       }
+   //    }
+   //    .img{
+   //       width: 70%;
+   //    }
+   // }
+  
+   
+}
+//секция reviews
+.reviews{
+   background-color: #d74680;
+   color: $color-text-light;
+   @include h2;
+   @include h3;
+   h3{
+      margin: 0 0 0.38em;
+   }
+   .rank{
+      color: #f6bb93;
+      margin: 0;
+   }
+   .grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      column-gap: 7em;
+      row-gap: 9.9em;
+      
+      justify-items:baseline;
+      align-items: baseline;
+      
+      @media (max-width:650px){
+         display: block;
+      }
+      .grid_item1{
+         display: grid;
+         grid-template-columns: repeat(4,1fr);
+         
+         img{
+            width: 100%;
+         }
+         .photo{
+            justify-self: start;
+            grid-column-start: 1;
+            grid-column-end: 2;
+         }
+         .comments{
+            font-size: 1.3rem;
+            line-height: 1.5;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.02em;
+            color: #ffffff;
+            margin: 0 0 1em;
+            min-height: 120px;
+            @media (max-width:940px){
+               min-height: 150px;
+            }
+         }
+         .grid_block{
+            text-align: left;
+            grid-column-start: 2;
+            grid-column-end: span col4-end;
+            margin: 0 0 0 20px;
+         }
+         @media (max-width:650px){
+            .comments{
+               margin: 0 0 0.5em;
+            }
+            .rank{
+               margin: 0 0 30px 0;
+            }
+         }
+   }
+   }
+  
+}
+@media (max-width:750px){
+   .reviews{
+      .grid{
+         row-gap: 3.9em;
+      }
+   }
+}
+//cекция contact
+.contact{
+   background-color: #3c5499;
+   color: $color-text-light;
+   @include h2;
+   h2:after{
+      background-color: #273a71;
+      opacity: 1;
+   }
+  p{
+   opacity: 1;
+  }
+   .grid_form{
+      margin: 0 0 60px;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: 56px 1fr;
+      row-gap: 30px;
+      column-gap: 30px;
+      
+      input,textarea{
+         width: 100%;
+         height: 100%;
+         position: relative;
+         border-radius: 5px;
+         background-color: #273a71;
+         font-size: 1.125rem;
+         font-weight: 400;
+         color: #ffffff;
+      }
+      textarea::placeholder{
+         color: white;
+         padding: 25px;
+      }
+      textarea:focus::placeholder{
+         opacity: 0;
+      }
+      input::placeholder{
+         color: white;
+         padding: 25px;
+      }
+      input:focus::placeholder{
+         opacity: 0;
+      }
+      .name{
+         position: relative;
+      }
+      input+span{
+         display: inline-block;
+         color: red;
+         position: absolute;
+         right: -20px;
+         top: -5px
+      }
+      .message{
+         height: 200px;
+         resize: none;
+         grid-column-start: 1;
+         grid-column-end: 3;
+         grid-row-start: 2;
+         grid-row-end: 2;
+         
+      }
+      @media (max-width:400px){
+         display: block;
+         input{
+            height: 56px;
+            margin-bottom: 20px;
+         }
+      }
+   }
+   @include button;
+   .button{
+      background-color: #30bae7;
+      border-bottom: 4px solid #299ec5;
+      margin: 0;
+      color: $color-text-light;
+   }
+}
+.footer {
+   background-color: #344b8e;
+   .wrapper{
+      padding: 2.5em 0.9em 3em;
+  .contacts{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+     
+      a{
+         color: $color-text-light;
+         font-size: 24px;
+         line-height: 29px;
+         font-weight: 600;
+         letter-spacing: 0.02em;
+      }
+      a:hover{
+         color: #30b6e4;
+      }
+  }
+  
+}
+
+}
+//media для contact
+@media (max-width:760px){
+   .contact{
+   .wrapper{
+      padding: 1em 0.9em 1em;
+   }
+   .footer{
+      .contacts{
+         a{
+            font-size: 1rem;
+         }
+         flex-direction: column;
+         gap: 10px;
+      }
+   }
+}
+}
