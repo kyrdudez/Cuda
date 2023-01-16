@@ -133,7 +133,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 586px) {
   .hi .wrapper {
-    padding: 0;
+    margin: 0 auto;
+    padding: 0 15px;
   }
 }
 .hi .header {
@@ -162,6 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 586px) {
   .hi .header {
+    margin: 0 -15px 64px;
     background-color: #631881;
     display: block;
     padding: 50px 0;
@@ -302,6 +304,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 2.175em;
   height: 0.1em;
   opacity: 0.14;
+}
+.services .about {
+  min-height: 100px;
 }
 .services .about_h span {
   display: block;
@@ -477,7 +482,7 @@ h1, h2, h3, h4, h5, h6 {
   --color:#15c7a8;
 }
 .skills .skills_flex .item_4 {
-  --percentage:55;
+  --percentage:85;
   --color:#eb7d4b;
 }
 .skills .total {
